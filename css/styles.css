@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+	/* Colors */
+	--light-blue: #2d9cdb;
+	--white: #fff;
+	--white-light: #f6f6f6;
+	--white-medium: #f2f2f2;
+	--grey: #aaa8a8;
+	--black: #333333;
+	--error: #ea2b70;
+
+	/* Font Sizes */
+	--h1: 1.5rem;
+	--button: 1.25rem;
+	--default: 1.125rem;
+}
+
+* {
+	margin: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: var(--default);
+	color: var(--black);
+	background-color: var(--white);
+	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+	color: var(--white-medium);
+}
+
+input {
+	border: none;
+	background-color: var(--white-light);
+	color: var(--black);
+}
+
+button {
+	color: var(--white-medium);
+	background-color: var(--light-blue);
+	border: none;
+	padding: 0.5em 2em;
+}
+
+form button:hover,
+form button:focus {
+	background-color: var(--black);
+	cursor: pointer;
+}
+
+.flex {
+	display: flex;
+}
+
+/* Typography */
+h1 {
+	font-size: var(--h1);
+	font-weight: 600;
+	text-align: center;
+}
+
+button {
+	font-size: var(--button);
+	font-weight: 500;
+}
+
+/* Navbar */
+
+nav {
+	padding: 1.5em 0;
+	background: var(--light-blue);
+	color: var(--white);
+}
+
+/* Container */
+.container {
+	margin: 5em auto;
+	padding: 2.5em 0;
+	width: 1200px;
+
+	box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+	text-transform: uppercase;
+	margin-bottom: 1.5em;
+}
+
+/* Form */
+form.frmAdd {
+	display: flex;
+	justify-content: center;
+}
+
+form.frmAdd input {
+	padding: 0.5em 1em;
+	width: 50%;
+}
+
+/* Tasks section */
+.task-list {
+	margin-top: 2.5em;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Task */
+.task {
+	display: flex;
+	width: 65%;
+	margin-bottom: 2em;
+	padding: 1.15em 1.7em;
+	justify-content: space-between;
+	box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task-description.done {
+	text-decoration: line-through;
+	color: var(--grey);
+}
+
+.task-actions {
+	list-style: none;
+	padding: 0;
+	display: flex;
+}
+
+.task-actions li {
+	margin-left: 1.5em;
+	color: var(--grey);
+}
+
+.task-actions li:hover,
+.task-actions li:focus {
+	font-weight: 500;
+	cursor: pointer;
+	color: var(--light-blue);
+}
+
+.delete:hover,
+.delete:focus {
+	color: var(--error) !important;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Form Edit */
+.frmEdit {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.frmEdit input {
+	padding: 1em;
+}
+
+.frmEdit .btn-edit,
+.frmEdit .btn-return {
+	margin-top: 0.75em;
+	font-size: 1rem;
+	padding: 0.5em 1.75em;
+}
+
+.frmEdit .btn-edit {
+	margin-left: 1.5em;
+	border: 2px solid var(--light-blue);
+}
+
+.frmEdit .btn-return {
+	background-color: var(--white);
+	color: var(--grey);
+	border: 2px solid var(--white-medium);
+	margin-left: auto;
+}
+
+.frmEdit .btn-return:hover,
+.frmEdit .btn-return:focus {
+	background-color: var(--black);
+	color: var(--white);
+	border: none;
+}

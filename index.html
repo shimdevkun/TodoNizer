@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TodoNizer</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<nav>
+			<h1 class="logo"><a href="#">TodoNizer</a></h1>
+		</nav>
+
+		<div class="container">
+			<h1>todo list</h1>
+			<form action="#" class="frmAdd">
+				<input type="text" name="task" placeholder="Add new task..." />
+				<button class="btn-add" type="submit">Add</button>
+			</form>
+
+			<section class="task-list">
+				<div class="task">
+					<p class="task-description">Take out the trash</p>
+					<ul class="task-actions">
+						<li class="delete hidden">Delete</li>
+						<li class="edit hidden">Edit</li>
+						<li class="done hidden">Done</li>
+						<li class="undo hidden">Undo</li>
+					</ul>
+				</div>
+				<div class="task">
+					<p class="task-description">Do Homework</p>
+					<ul class="task-actions">
+						<li class="delete hidden">Delete</li>
+						<li class="edit hidden">Edit</li>
+						<li class="done hidden">Done</li>
+						<li class="undo hidden">Undo</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
