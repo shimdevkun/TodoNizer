@@ -1,6 +1,6 @@
 # TodoNizer
 
-This is a basic todo web app with the following functionality:
+This is a basic todo web app with the following functionalities:
 
 - Add task
 - Edit task
