@@ -83,13 +83,13 @@ function showActions(e) {
 		let arrTaskActions = Array.from(taskActions.children);
 
 		if (taskDescription.classList.contains('done')) {
-			arrTaskActions.forEach(li => {
+			arrTaskActions.forEach((li) => {
 				if (li.classList.contains('delete') || li.classList.contains('undo')) {
 					li.classList.remove('hidden');
 				}
 			});
 		} else {
-			arrTaskActions.forEach(li => {
+			arrTaskActions.forEach((li) => {
 				if (!li.classList.contains('undo')) {
 					li.classList.remove('hidden');
 				}
@@ -106,7 +106,7 @@ function hideActions(e) {
 		// convert HTML Collection to Array
 		let arrTaskActions = Array.from(taskActions.children);
 
-		arrTaskActions.forEach(li => {
+		arrTaskActions.forEach((li) => {
 			li.classList.add('hidden');
 		});
 	}
@@ -187,7 +187,7 @@ function editTask(e) {
 	taskList.classList.add('edit-mode');
 
 	// Add click event
-	btnEdit.addEventListener('click', function(e) {
+	btnEdit.addEventListener('click', function (e) {
 		e.preventDefault();
 		taskDescription.textContent = editTask.value;
 		resetUI(task, form);
@@ -200,7 +200,7 @@ function doneTask(e) {
 	taskDescription.classList.add('done');
 
 	let arrTaskActions = Array.from(taskActions.children);
-	arrTaskActions.forEach(li => {
+	arrTaskActions.forEach((li) => {
 		if (li.classList.contains('delete') || li.classList.contains('undo')) {
 			li.classList.remove('hidden');
 		} else {
@@ -215,7 +215,7 @@ function undoTask(e) {
 	taskDescription.classList.remove('done');
 
 	let arrTaskActions = Array.from(taskActions.children);
-	arrTaskActions.forEach(li => {
+	arrTaskActions.forEach((li) => {
 		if (li.classList.contains('undo')) {
 			li.classList.add('hidden');
 		} else {
