@@ -1,3 +1,5 @@
+// TODO : hide taskActions when not hover (mobile)
+
 let taskList = document.querySelector('.task-list');
 let btnAdd = document.querySelector('.btn-add');
 let newTask = document.querySelector('input[name="task"]');
@@ -21,8 +23,9 @@ function addTask(e) {
 		return;
 	}
 
-	if (newTask.value === '') {
+	if (newTask.value.trim() === '') {
 		alert('Input field cannot be empty');
+		newTask.value = '';
 		newTask.focus();
 		return;
 	}
@@ -35,6 +38,7 @@ function addTask(e) {
 	// create task-actions
 	let taskActions = document.createElement('ul');
 	taskActions.classList.add('task-actions');
+	taskActions.classList.add('hidden');
 
 	let liDelete = document.createElement('li');
 	liDelete.textContent = 'Delete';
@@ -74,7 +78,10 @@ function addTask(e) {
 
 //#region toggleActions
 function showActions(e) {
-	if (e.target.classList.contains('task')) {
+	if (
+		e.target.classList.contains('task') &&
+		!e.target.classList.contains('edit-mode')
+	) {
 		let task = e.target;
 		let taskDescription = task.children[0];
 		let taskActions = task.children[1];
@@ -95,6 +102,8 @@ function showActions(e) {
 				}
 			});
 		}
+
+		taskActions.classList.remove('hidden');
 	}
 }
 
@@ -109,6 +118,8 @@ function hideActions(e) {
 		arrTaskActions.forEach((li) => {
 			li.classList.add('hidden');
 		});
+
+		taskActions.classList.add('hidden');
 	}
 }
 
@@ -168,7 +179,7 @@ function editTask(e) {
 	btnReturn.textContent = 'Return';
 
 	// Create flex container
-	let div = document.createElement('flex');
+	let div = document.createElement('div');
 	div.classList.add('flex');
 	div.appendChild(btnReturn);
 	div.appendChild(btnEdit);
@@ -273,7 +284,7 @@ function resetUI(task, form) {
 	// Reset UI
 	task.classList.remove('edit-mode');
 	taskDescription.classList.remove('hidden');
-	taskActions.classList.remove('hidden');
+	// taskActions.classList.remove('hidden'); // is hidden by default on mobile
 	taskList.classList.remove('edit-mode');
 
 	// Delete form
