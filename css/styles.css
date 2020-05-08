@@ -11,14 +11,16 @@
 	--error: #ea2b70;
 
 	/* Font Sizes */
-	--logo: 1.65rem;
-	--title: 1.25rem;
+	--mobile-title: 1.25rem;
+	--title: 1.5rem;
 	--regular: 0.875rem;
-	--medium: 1.125rem;
+	--medium: 1.3125rem;
+	--medium-mobile: 1.125rem;
 }
 
 * {
 	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
@@ -44,12 +46,14 @@ input {
 	border: none;
 	background-color: var(--white-light);
 	color: var(--black);
+
 	padding: 1em;
+	font-size: var(--regular);
 }
 
 button {
 	padding: 0.5em;
-	font-size: var(--medium);
+	font-size: var(--medium-mobile);
 	font-weight: 500;
 
 	border: none;
@@ -65,7 +69,7 @@ button:focus {
 
 /* Typography */
 h1 {
-	font-size: var(--title);
+	font-size: var(--mobile-title);
 	font-weight: 600;
 	text-align: center;
 }
@@ -79,17 +83,19 @@ h1 {
 .container {
 	width: 90%;
 	margin: 0 auto;
+	max-width: 1200px;
 }
 
 .container-tasks {
+	overflow: auto;
 	margin: 1.75em auto;
-	padding: 1.75em 0;
+	padding-bottom: 1em;
 	box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .container h1 {
 	text-transform: uppercase;
-	margin-bottom: 1em;
+	margin: 1.4em 0;
 }
 
 /* Navbar */
@@ -97,10 +103,6 @@ nav {
 	padding: 1.5em 0;
 	background: var(--light-blue);
 	color: var(--white);
-}
-
-.logo {
-	font-size: var(--logo);
 }
 
 /* Form */
@@ -169,7 +171,7 @@ nav {
 }
 
 .frmEdit input {
-	width: 90%;
+	width: 100%;
 	margin-bottom: 0.75em;
 }
 
@@ -177,10 +179,6 @@ nav {
 .btn-return {
 	font-size: 1rem;
 	width: 48%;
-}
-
-.btn-edit {
-	border: 2px solid var(--light-blue);
 }
 
 .btn-edit:hover,
@@ -198,74 +196,64 @@ nav {
 .btn-return:focus {
 	background-color: var(--black);
 	color: var(--white);
-	border: none;
+	border-color: transparent;
 }
 
-@media (min-width: 600px) {
+/* Media Queries */
+@media (min-width: 900px) {
 	body {
-		font-size: var(--default);
+		font-size: var(--medium-mobile);
 	}
 
-	button {
-		padding: 0.5em 2em;
-	}
-
-	button {
-		font-size: var(--button);
-	}
-
-	/* Container */
+	/* Layout */
 	.container {
-		margin: 5em auto;
-		padding: 2.5em 0;
-		width: 1200px;
+		width: 85%;
 	}
 
-	.container h1 {
-		margin-bottom: 1.5em;
+	.container-tasks {
+		margin-top: 5em;
+	}
+
+	h1 {
+		font-size: var(--title);
 	}
 
 	/* Form */
-	form.frmAdd {
-		display: flex;
-		justify-content: center;
+	.frmAdd {
+		width: 85%;
 	}
 
-	form.frmAdd input {
-		padding: 0.5em 1em;
-		width: 50%;
+	.frmAdd {
+		flex-direction: row;
 	}
 
-	/* Tasks section */
-	.task-list {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	.frmAdd input {
+		width: 100%;
+	}
+
+	.btn-add {
+		margin: 0;
+		padding: 0.5em 2em;
 	}
 
 	/* Task */
 	.task {
 		display: flex;
-		width: 65%;
-		padding: 1.15em 1.7em;
 		justify-content: space-between;
 	}
 
-	.task-actions {
-		list-style: none;
-		padding: 0;
-		display: flex;
+	.task-description {
+		width: 100%;
 	}
 
-	.task-actions li {
+	.task-actions li + li {
 		margin-left: 1.5em;
 	}
 
-	/* Form Edit */
-	.frmEdit {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
+	.btn-edit,
+	.btn-return {
+		width: inherit;
+		padding: 0.5em 1.75em;
 	}
 
 	.frmEdit .btn-edit {
@@ -274,5 +262,34 @@ nav {
 
 	.frmEdit .btn-return {
 		margin-left: auto;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container h1 {
+		margin: 1.85em 0;
+	}
+
+	.container-tasks {
+		padding-bottom: 2.5em;
+	}
+
+	.frmAdd,
+	.task-list {
+		width: 70%;
+	}
+
+	.btn-add {
+		padding: 0 2.5em;
+		font-size: var(--medium);
+	}
+
+	.frmAdd input {
+		font-size: 1rem;
+	}
+
+	.frmAdd input,
+	.task-description {
+		padding: 1.15em 1.667em;
 	}
 }

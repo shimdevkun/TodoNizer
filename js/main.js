@@ -200,7 +200,7 @@ function editTask(e) {
 	// Add click event
 	btnEdit.addEventListener('click', function (e) {
 		e.preventDefault();
-		taskDescription.textContent = editTask.value;
+		taskDescription.textContent = editTask.value.trim();
 		resetUI(task, form);
 	});
 }
