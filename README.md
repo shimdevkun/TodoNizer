@@ -1,6 +1,8 @@
 # TodoNizer
 
-This is a basic todo web app to help you organize your tasks
+This is a basic todo web app to help you organize your tasks.png
+
+Try the live version [here](https://todo-nizer.sshimabuku.now.sh/)
 
 ## Versions
 
