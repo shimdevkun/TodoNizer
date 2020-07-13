@@ -1,8 +1,8 @@
 # TodoNizer
 
-This is a basic todo web app to help you organize your tasks.png
+This is a basic todo web app to help you organize your tasks.
 
-Try the live version [here](https://todo-nizer.sshimabuku.now.sh/)
+See the live version [here](https://todo-nizer.sshimabuku.now.sh/)
 
 ## Versions
 
@@ -33,9 +33,9 @@ Try the live version [here](https://todo-nizer.sshimabuku.now.sh/)
 
 ## Incoming Features
 
-- Save tasks after refreshing page
+1. Save tasks after refreshing page
 
 ## Known issues
 
-- User should not edit more than a task at once
-- User should not edit a task to an empty string
+1. User should not edit more than a task at once
+2. User should not edit a task to an empty string
