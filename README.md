@@ -29,13 +29,11 @@ This is a basic todo web app to help you organize your tasks
 
 - Cannot longer create empty tasks (empty espaces)
 
-## Please note
+## Incoming Features
 
-This project is ongoing and far from being finished.
+- Save tasks after refreshing page
 
-Here's a list of high priority incoming features/bugfixes:
+## Known issues
 
 - User should not edit more than a task at once
 - User should not edit a task to an empty string
-- Save tasks after refreshing page
-- Code refactoring
